@@ -22,3 +22,6 @@ const uploadFile = async (event) => {
       }
     }
   };
+module.exports = {
+    uploadFile,
+};
