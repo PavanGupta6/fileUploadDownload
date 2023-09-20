@@ -30,7 +30,7 @@ resources:
       Properties:
         PolicyName: UploadObjects
         PolicyDocument:
-          Version: 'policy date'
+          Version: '2012-10-17'
           Statement:
             - Sid: LambdaPutObjects
               Effect: Allow
@@ -39,9 +39,9 @@ resources:
                 - s3:PutObjectTagging
               Resource:
                 Fn::Join:
-                  - “”
-                  - - “arn:aws:s3:::”
+                  - ""
+                  - - "arn:aws:s3:::"
                     - Ref: MyServerlessExampleBucket
-                    - “/*”
+                    - "/*"
         Roles:
           - s3-fullaccess-role
