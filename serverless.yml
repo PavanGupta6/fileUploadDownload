@@ -3,6 +3,7 @@ service: file-upload-download-api
 provider:
   name: aws
   runtime: nodejs18.x
+  region: ap-south-1
   apiGateway:
     # accepted binary type for file uploads
     binaryMediaTypes:
@@ -23,7 +24,7 @@ resources:
     MyServerlessExampleBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: serverless-example-bucket
+        BucketName: file-example-bucket
     # define a policy for an existing role
     UploadFilePolicy:
       Type: AWS::IAM::Policy
