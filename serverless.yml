@@ -24,7 +24,7 @@ resources:
     MyServerlessExampleBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: file-example-bucket
+        BucketName: fileupload-example-bucket
     # define a policy for an existing role
     UploadFilePolicy:
       Type: AWS::IAM::Policy
@@ -45,4 +45,4 @@ resources:
                     - Ref: MyServerlessExampleBucket
                     - "/*"
         Roles:
-          - s3-fullaccess-role
+          - lambda-s3-fullaccess-role
