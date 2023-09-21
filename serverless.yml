@@ -12,7 +12,7 @@ provider:
 functions:
   # sync upload
   uploadFile:
-    handler: app.uploadFile
+    handler: app.handle
     events:
       - http:
           method: post
