@@ -2,8 +2,11 @@
 const parser = require('lambda-multipart-parser');
 
 const uploadFile = async (event) => {
+    console.log(`event - ${event}`);
     const { file, fields } = await parser.parse(event);
+    console.log(`fields - ${fields}`);
     const tags = { filename: file.filename };
+    console.log(`filename - ${filename}`)
     try {
       await s3Client
         .putObject({
