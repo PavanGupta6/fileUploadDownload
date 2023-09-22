@@ -73,11 +73,12 @@ module.exports.download = async (event) => {
   try {
     const filename = event.pathParameters.filename;
     console.log('---------filename-', filename);
-    const params = {
-      Bucket: BUCKET,
-      Key: filename,
-    };
-    await s3.getObject(params, (err, data) => {
+    s3.getObject({Bucket: BUCKET, Key: filename}).promise().then( data =>{
+      return {
+        statusCode: 200,
+        body: data
+    }})
+  /*   await s3.getObject(params, (err, data) => {
         if (err) console.error(err);
         console.log(data.Body.toString());
         console.log(`file has been downloaded!`);
@@ -87,7 +88,7 @@ module.exports.download = async (event) => {
     return {
       statusCode: 200,
       body: console.log(data.Body.toString()),
-    };
+    }; */
   } catch (err) {
     console.log('error-----', err);
     return {
