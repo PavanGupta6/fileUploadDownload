@@ -79,7 +79,7 @@ module.exports.download = async (event) => {
     };
     await s3.getObject(params, (err, data) => {
         if (err) console.error(err);
-        fs.writeFileSync('D:/VS Code/download.json', data.Body.toString());
+        console.log(data.Body.toString());
         console.log(`file has been downloaded!`);
       })
       .promise();
