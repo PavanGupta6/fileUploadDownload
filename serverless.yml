@@ -19,6 +19,14 @@ functions:
           path: upload
           cors: true
 
+  downloadFile:
+    handler: app.download
+    events:
+      - http:
+          method: get
+          path: download/{filename}
+          cors: true
+
 resources:
   Resources:
     MyServerlessExampleBucket:
