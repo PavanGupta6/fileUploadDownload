@@ -4,6 +4,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   region: ap-south-1
+  stage: dev
   apiGateway:
     # accepted binary type for file uploads
     binaryMediaTypes:
